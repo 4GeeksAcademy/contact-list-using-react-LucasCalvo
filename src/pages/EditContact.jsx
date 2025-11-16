@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { json, useParams } from 'react-router-dom' 
 
-const EditContact=()=>{
+export const EditContact=()=>{
     const {id}=useParams();
     const [contact, setcontact]=useState({
         name: '',
@@ -46,6 +46,4 @@ const EditContact=()=>{
                 console.error('error updating contact:',error);
             }
         };
-
-    }
-export default EditContact;
+     }

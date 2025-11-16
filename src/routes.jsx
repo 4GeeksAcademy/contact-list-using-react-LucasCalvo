@@ -11,8 +11,8 @@ import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import { Info } from "./pages/Info.jsx";
 import { AddContact } from "./pages/AddContact.jsx";
-import { EditContact } from "./pages/EditContact.jsx";
-
+import { EditContact} from "./pages/EditContact.jsx"
+import { DeleteContact} from "./pages/DeleteContact"
 
 
 export const router = createBrowserRouter(
@@ -33,7 +33,7 @@ export const router = createBrowserRouter(
          <Route path="/info" element={<Info />} />
           <Route path="/addcontact" element={<AddContact />} />
            <Route path="/editcontact" element={<EditContact />} />
-        
+        <Route path="/deletecontact" element={<DeleteContact />} />
           
       </Route>
     )
