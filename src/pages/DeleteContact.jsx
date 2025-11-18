@@ -16,7 +16,7 @@ export const DeleteContact = () => {
 
             if (response.ok) {
                 console.log('Contacto eliminado correctamente');
-                navigate("/")   // te lleva al Home
+                navigate("/")   
             } else {
                 console.error('Error al eliminar el contacto');
             }
