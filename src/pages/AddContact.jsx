@@ -58,14 +58,13 @@ export const AddContact = () => {
       name="name"
     />
   </div>
-  
+
   <div className="col-md-6">
     <label htmlFor="inputEmail4" className="form-label">Email</label>
     <input 
       type="email" 
       className="form-control" 
       id="inputEmail4" 
-      placeholder="@email" 
       value={data.email}
       onChange={formChange} 
       name="email"
@@ -80,7 +79,6 @@ export const AddContact = () => {
       type="text" 
       className="form-control" 
       id="inputAddress" 
-      placeholder="1234 Main St" 
       value={data.address} 
       onChange={formChange}
       name="address"
@@ -93,7 +91,6 @@ export const AddContact = () => {
       type="text" 
       className="form-control" 
       id="inputAddress2" 
-      placeholder="Apartment, studio, or floor"
       value={data.phone} 
       onChange={formChange}
       name="phone"
