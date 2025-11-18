@@ -46,6 +46,19 @@ export const AddContact = () => {
     <div className="container" >
         <h1>AddContact</h1>
         <form className="row g-3" onSubmit={handleSubmit}>
+
+          <div className="col-md-6">
+    <label htmlFor="inputname" className="form-label">Full Name</label>
+    <input 
+      type="text" 
+      className="form-control" 
+      id="inputname" 
+      value={data.name} 
+      onChange={formChange}
+      name="name"
+    />
+  </div>
+  
   <div className="col-md-6">
     <label htmlFor="inputEmail4" className="form-label">Email</label>
     <input 
@@ -59,17 +72,7 @@ export const AddContact = () => {
     />
   </div>
 
-  <div className="col-md-6">
-    <label htmlFor="inputname" className="form-label">Full Name</label>
-    <input 
-      type="text" 
-      className="form-control" 
-      id="inputname" 
-      value={data.name} 
-      onChange={formChange}
-      name="name"
-    />
-  </div>
+  
 
   <div className="col-12">
     <label htmlFor="inputAddress" className="form-label">Address</label>
