@@ -1,4 +1,5 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
+import { Link } from "react-router-dom"
 import useGlobalReducer from "../hooks/useGlobalReducer"; 
 
 export const AddContact = () => {
@@ -17,90 +18,86 @@ export const AddContact = () => {
 
         fetch("https://playground.4geeks.com/contact/agendas/lucas/contacts", {
             method: "POST",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify({
-                ...data, 
-                agenda_slug: "lucas"
-            })
+            headers: { "Content-Type" : "application/json" },
+            body: JSON.stringify({ ...data, agenda_slug: "lucas" })
         })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Error al crear contacto")
-            }
-            return response.json()
-        })
+        .then((res) => res.json())
         .then((newContact) => {
-            dispatch({
-                type:"add-contact",
-                payload: newContact
-            })
-            console.log("Contacto agregado:", newContact)
+            dispatch({ type:"add-contact", payload: newContact })
             setData({ name:"", email:"", phone:"", address:"" })
         })
-        .catch((error) => console.log("Error:", error))
+        .catch((err) => console.log(err))
     }
 
-  return (
-    <div className="container" >
-        <h1>AddContact</h1>
-        <form className="row g-3" onSubmit={handleSubmit}>
+    return (
+        <div className="container">
+            <h1 className="text-center">Add Contact</h1>
 
-          <div className="col-md-6">
-    <label htmlFor="inputname" className="form-label">Full Name</label>
-    <input 
-      type="text" 
-      className="form-control" 
-      id="inputname" 
-      value={data.name} 
-      onChange={formChange}
-      name="name"
-    />
-  </div>
+            <form className="row g-3" onSubmit={handleSubmit}>
+                
+                <div className="col-12">
+                    <label className="form-label">Full Name</label>
+                    <input 
+                        type="text" 
+                        className="form-control"
+                        value={data.name}
+                        onChange={formChange}
+                        name="name"
+                        placeholder= "Full name"
+                    />
+                </div>
 
-  <div className="col-md-6">
-    <label htmlFor="inputEmail4" className="form-label">Email</label>
-    <input 
-      type="email" 
-      className="form-control" 
-      id="inputEmail4" 
-      value={data.email}
-      onChange={formChange} 
-      name="email"
-    />
-  </div>
+                <div className="col-12">
+                    <label className="form-label">Email</label>
+                    <input 
+                        type="email" 
+                        className="form-control"
+                        value={data.email}
+                        onChange={formChange}
+                        name="email"
+                        placeholder= "Enter email"
+                    />
+                </div>
 
-  
+                <div className="col-12">
+                    <label className="form-label">Address</label>
+                    <input 
+                        type="text"
+                        className="form-control"
+                        value={data.address}
+                        onChange={formChange}
+                        name="address"
+                        placeholder= "Enter address"
+                    />
+                </div>
 
-  <div className="col-12">
-    <label htmlFor="inputAddress" className="form-label">Address</label>
-    <input 
-      type="text" 
-      className="form-control" 
-      id="inputAddress" 
-      value={data.address} 
-      onChange={formChange}
-      name="address"
-    />
-  </div>
+                <div className="col-12">
+                    <label className="form-label">Phone</label>
+                    <input 
+                        type="text"
+                        className="form-control"
+                        value={data.phone}
+                        onChange={formChange}
+                        name="phone"
+                        placeholder= "Enter phone"
+                    />
+                </div>
 
-  <div className="col-12">
-    <label htmlFor="inputAddress2" className="form-label">Phone</label>
-    <input 
-      type="text" 
-      className="form-control" 
-      id="inputAddress2" 
-      value={data.phone} 
-      onChange={formChange}
-      name="phone"
-    />
-  </div>
+                <div className="col-12">
+                    <button type="submit" className="btn btn-primary w-100">
+                        Save
+                    </button>
+                </div>
 
-  <div className="col-12">
-    <button type="submit" className="btn btn-primary">Sign in</button>
-  </div>
-</form>
-    </div>
-  )
+                <div className="col-12 ">
+                    <Link to="/">
+                     <a href="#" className="card-link"> or get back to contacts</a>
+                      
+                    </Link>
+                </div>
+
+            </form>
+        </div>
+    )
 }
+
