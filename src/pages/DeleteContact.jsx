@@ -16,7 +16,7 @@ export const DeleteContact = () => {
 
             if (response.ok) {
                 console.log('Contacto eliminado correctamente');
-                navigate("/")   
+                navigate("/")
             } else {
                 console.error('Error al eliminar el contacto');
             }
@@ -27,10 +27,7 @@ export const DeleteContact = () => {
 
     return (
         <div className="text-center mt-5">
-            <h1>¿Seguro que querés eliminar este contacto?</h1>
-
             <button className="btn btn-danger" onClick={handleDelete}>
-                Eliminar
             </button>
         </div>
     );

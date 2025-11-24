@@ -22,13 +22,7 @@ export const Demo = () => {
               
               <p>Open file ./store.js to see the global store that contains and updates the list of colors</p>
               
-              <button className="btn btn-success" 
-                onClick={() => dispatch({
-                  type: "add_task", 
-                  payload: { id: item.id, color: '#ffa500' }
-                })}>
-                Change Color
-              </button>
+             
             </li>
           );
         })}
