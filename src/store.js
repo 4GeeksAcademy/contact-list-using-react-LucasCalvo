@@ -5,17 +5,7 @@ export const initialStore = () => {
       { id: 1, title: "Make the bed", background: null },
       { id: 2, title: "Do my homework", background: null }
     ],
-    contacts: [
-      
-      {
-        id: 1,
-        name: "Lucas Calvo",
-        address: "2101 Ludlam Rd",
-        phone: "786-914-9920",
-        email: "lucascalvo2903@gmail.com",
-        image: "https://marketplace.canva.com/A5alg/MAESXCA5alg/1/tl/canva-user-icon-MAESXCA5alg.png"
-      }
-    ]
+    contacts: []
   };
 };
 
