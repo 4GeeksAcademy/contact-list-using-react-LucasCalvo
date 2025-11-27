@@ -25,11 +25,6 @@ export const DeleteContact = () => {
         }
     };
 
-    return (
-        <div className="text-center mt-5">
-            <button className="btn btn-danger" onClick={handleDelete}>
-            </button>
-        </div>
-    );
+   
 };
 

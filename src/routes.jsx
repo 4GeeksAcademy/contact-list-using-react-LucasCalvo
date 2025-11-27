@@ -12,7 +12,7 @@ import { Demo } from "./pages/Demo";
 import { Info } from "./pages/Info.jsx";
 import { AddContact } from "./pages/AddContact.jsx";
 import { EditContact} from "./pages/EditContact.jsx"
-import { DeleteContact} from "./pages/DeleteContact"
+import { DeleteContact} from "./pages/DeleteContact.jsx"
 
 
 export const router = createBrowserRouter(
@@ -32,7 +32,7 @@ export const router = createBrowserRouter(
         <Route path="/demo" element={<Demo />} />
          <Route path="/info" element={<Info />} />
           <Route path="/addcontact" element={<AddContact />} />
-           <Route path="/editcontact" element={<EditContact />} />
+           <Route path="/editcontact/:contact_id" element={<EditContact />} />
         <Route path="/deletecontact" element={<DeleteContact />} />
           
       </Route>

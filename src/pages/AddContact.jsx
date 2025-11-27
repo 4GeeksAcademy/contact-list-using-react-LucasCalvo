@@ -22,7 +22,7 @@ export const AddContact = () => {
      
       const contactToStore = {
         id: contact.id,
-        name: contact.full_name,
+        name: contact.name,
         email: contact.email,
         phone: contact.phone,
         address: contact.address,
